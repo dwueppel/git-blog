@@ -1,0 +1,21 @@
+# Testing Index Markdown Page #
+
+This is to test that we will actually show correct information when we are
+running this test. So far we only have a few pages and I'm still working on
+writting up the backend to actually function correctly. Items I want to get
+working on:
+
+ - Self contained
+ - Self managing (directory structure -> menu structure)
+ - Directories contain details about section.
+ - Directories can only be accessed if they contain section detail
+	information.
+ - Caching of menu structure for speed. Manually remove cache files to
+	rebuild.
+ - Automatically render markdown pages.
+ - Customizable UI components
+ 	- Can handle added CSS entires per section
+	- Can handled added JavaScript per section
+	- Can customize UI per section (new header/footer files).
+	- Header and footer are PHP by default.
+
