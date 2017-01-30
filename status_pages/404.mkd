@@ -1,0 +1,7 @@
+<!--TITLE: 404 Not Found-->
+# 404 Page Not Found #
+
+Unfortunately you come across a page that does not exist. Please use your back
+button to return to the previous page. Or use the nagigation to navigate away from
+this page.
+

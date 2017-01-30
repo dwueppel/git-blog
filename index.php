@@ -1,17 +1,21 @@
 <?php
 	include("lib/Parsedown.php");
+	include("lib/GitBlog.php");
+
+	if (array_key_exists('section', $_GET)) {
+		$section = $_GET['section'];
+	}
+	else {
+			$section = '';
+	}
+
+	$gb = new GitBlog($section);
 
 	# Get the page to display:
-	# TODO: Need to get this value adn validate we are allowed to display it.
-	$displayPage = 'index.mkd';
+	$displayPage = 'index';
+	if (array_key_exists('page', $_GET)) {
+		$displayPage = $_GET['page'];
+	}
 
-	# Instantiate the parsedown object.
-	$pd = new Parsedown();
-
-	# Load the page contents.
-	$displayContent = file_get_contents($displayPage);
-
-	include("includes/header.php");
-	echo $pd->text($displayContent);
-	include("includes/footer.php");
+	$gb->renderPage($displayPage);
 ?>

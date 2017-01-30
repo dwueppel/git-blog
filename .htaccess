@@ -1,0 +1,13 @@
+RewriteEngine on
+
+# Allow for formatting of the site like a normal directory structure.
+RewriteRule "^(.*)\/([^\/]*)\.html$" "index.php?section=$1&page=$2" [L]
+RewriteRule "^(.*)\.html" "index.php?page=$1" [L]
+RewriteRule "^(.*)\/$" "index.php?section=$1&page=index" [L]
+
+# Prevent access to certain kinds of files.
+RewriteRule "\.mkd" "index.php?section=status_pages&page=404" [L]
+
+# Adjust the location of error documents.
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule . "index.php?section=status_pages&page=404" [L]

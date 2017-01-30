@@ -1,0 +1,30 @@
+<!--link_label: About-->
+<!--sort_order: 10-->
+# About Git-Blog #
+
+Git-Blog started as a side project of mine. I always wanted to be able to
+maintain my own website, I also enjoyed being able to have a lot of control
+over the HTML that was being presented at the same time. In addition I wanted
+to be able to version my site easily and manage the whole thing from a git
+repository.
+
+To aid in the rendering I thought it would be better to go with something like
+markdown. This was to save time in having to do all of the HTML formatting
+manually, while still allowing it when it was wanted.
+
+I've tried using other content management systems (CMS), but they all felt
+klunky in how they handled text and formatting. I was looking for something
+quick and easy to work on. I love my text editor and I don't always want to
+work in a browser. In addition I wanted something that could be edited and
+managed remotely, have a separate testing system that I could test changes out
+in first and then deploy easily to a production site.
+
+Thus, Git-Blog was born. This tool is designed to be, hopefully, quick, and
+easy to use. It starts off as a git repository so creating new sites is just a
+matter of branching. The entire site is self contained based on the directory
+structure with each diretory allowing for custom configuration items. Headers
+and Footers can be customized to suit your needs in each section and allow for
+full PHP customization.
+
+This probject is still in it's infancy so it's likely to either be abandoned
+or evolve quickly.
