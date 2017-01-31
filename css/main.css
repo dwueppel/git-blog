@@ -132,3 +132,10 @@ h3 {
 #SubNavigation li a:hover {
 	background-color: #aaa;
 }
+
+.code {
+	border: 1px solid #444;
+	background-color: #eee;
+	margin: 10px;
+	padding: 5px;
+}

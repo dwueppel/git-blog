@@ -1,50 +1,27 @@
 <!--link_label: Home-->
 <!--sort_order: 1-->
-# Testing Index Markdown Page #
+# Git-Blog #
 
-This is to test that we will actually show correct information when we are
-running this test. So far we only have a few pages and I'm still working on
-writting up the backend to actually function correctly. Items I want to get
-working on:
+Git-Blog is the barebones blogging software. It's designed to be lightweight
+and easy to use. It's also built from the ground up with the idea of being a
+Git repository to aid with version control and release processing.
+
+## Features ##
 
  - Self contained
  - Self managing (directory structure -> menu structure)
  - Directories contain details about section.
- - Directories can only be accessed if they contain section detail
-	information.
- - Caching of menu structure for speed. Manually remove cache files to
-	rebuild.
- - Automatically render markdown pages.
- - Customizable UI components
- 	- Can handle added CSS entires per section
-	- Can handled added JavaScript per section
-	- Can customize UI per section (new header/footer files).
-	- Header and footer are PHP by default.
+ - Content is formatted using Markdown.
+ - Customizable headers and footers.
 
-## TODO ##
+## Git-Blog in Action ##
 
-The following is a list of features that remain to be completed.
+You're looking at it. This site is the main branch of Git-Blog.
 
- - Link handling
-   - Allowing parsing of documents for links (extrnal and internal).
-	- Link validation checks. When a document is parsed, if an invalid link is
-	  found notify the admin of a broken link.
- - Navigation
-	 - Saving Navigation to a chache file.
-	 - ~~Handling navigation menus.~~
-	 - ~~Default navigation rendering.~~
- - Access restrictions
-	 - ~~Prevent access to raw mkd files~~.
-	 - ~~Allow access to specific referenced content (images, css, documents, etc).~~
- - Git structure
-    - Release version of code.
-    - Personal use version (branch).
-    - Post pull hooks (clear cache, etc).
- - Documentation
-    - Create documentation for application
-    - Documentation is default release branch.
-    - Include license (GPL 2.0) and refernece to Parsedown.
- - Tests
-    - Create set of tests for validating all of the PHP code (PHPUnit).
- - ~~Page rendering~~
-    - ~~Handle customized titles for each page. &lt;!--TITLE: My custom Title -->~~
+## Why? ##
+
+I've wanted something really simple to use as a blogging/website platform for
+a while. I've been unimpressed with other suites, either requring too much
+backend support and/or not providing revisioning/releasing infrastructure. It
+seemed like a pretty simple task to write something that did what I wanted so
+I built it.

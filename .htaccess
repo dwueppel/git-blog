@@ -7,6 +7,7 @@ RewriteRule "^(.*)\/$" "index.php?section=$1&page=index" [L]
 
 # Prevent access to certain kinds of files.
 RewriteRule "\.mkd" "index.php?section=status_pages&page=404" [L]
+RewriteRule "\.json" "index.php?section=status_pages&page=404" [L]
 
 # Adjust the location of error documents.
 RewriteCond %{REQUEST_FILENAME} !-f

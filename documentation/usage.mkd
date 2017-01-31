@@ -1,0 +1,179 @@
+<!--TITLE: Usage-->
+<!--link_title: Usage-->
+<!--sort_order: 30-->
+
+# Git-Blog Usage #
+
+Git-Blog builds pages based on a number of components. The directory structure
+and files form the basis of the site and define the navigation of the pages.
+This section outlines each of the components and how they operate together to
+generate your site.
+
+## Headers and Footers ##
+
+Headers and footers are included as php includes. This means that they can be
+contain any PHP code that you wish. The location of these include files is in
+the includes directory from the main root directory of the Git-Blog folder.
+The default filenames are 'header.php' and 'footer.php', however, these can be
+customized per section by adjusting the section's section_info.json file.
+
+### Custom Methods ###
+
+Git-Blog exposes some methods to be used in the rendering of the headers and
+footers. These methods are all called on the _$this_ object. Below is a
+listing of these custom methods and how they can be used.
+
+#### link($path) ####
+
+<pre class="code">
+	&lt;?= $this->link('/path/to/document.html') ?&gt;
+</pre>
+
+This method allows you to create a link to a component within the Git-Blog
+system without having to worry about where the Git-Blog root is located. For
+instance if the root is found at http://www.example.com/path/to/git-blog then
+using the link method for a path of '/path/to/document.html' will give a URL
+of '/path/to/git-blog/path/to/document.html'.
+
+The link method is used internally when building navigation items.
+
+#### renderSectionNavigation($depth[, $addedItems]) ####
+
+<pre class="code">
+	&lt;?= $this->renderSectionNavigation(0) ?&gt;
+</pre>
+
+This will render the main navigation menu as an unordered list. This only
+renders section heading items for the first level and goes down the given
+number of levels deep. If a negative value is provided all menu levels are
+rendered. An optional argument can be passed in to specify additional menu
+items to be added. The format of the argument is an associative array:
+
+<pre class="code">
+array(
+	"label" => "Menu Label",
+   "path" => "/path/to/item/",
+	"sortOrder" => 10,
+)
+</pre>
+
+The path is rendered using the link method as described above. So '/' and ''
+will render the same and be rooted to the base path of the Git-Blog
+installation.
+
+#### renderSectionSubNavigation($depth) ####
+
+<pre class="code">
+	&lt;?= $this->renderSectionSubNavigation(0) ?&gt;
+</pre>
+
+This will render the specific section's navigation. This renders all of the
+pages for the given section. The sub sections are omitted. The items are
+rendered as an unordered list.
+
+#### version() ####
+
+Returns the version string of Git-Blog.
+
+## File Format ##
+
+All content files found in a directory are only considered if they have a .mkd
+extension. These are assumed to be Markdown formatted files and are rendered
+between the header and footer of the site. The .htacess file that comes with
+Git-Blog adjusts accesses to .html files to be redirected to their
+corresponding .mkd file. Customized headers and footers are available per
+section (directory) of the site.
+
+### Special Variables ###
+
+In addition to the standard Markdown formatting additional information can be
+passed to Git-Blog during the rendering of a file. This is done by using
+special variables. Each special variable can be provided in an HTML comment
+with the following format:
+
+<pre class="code">
+&lt;!-- VAR_NAME: variable value --&gt;
+</pre>
+
+The variable name (VAR_NAM) is case insensitive and cannot contain spaces. The
+value is set to the remainder of the comment (no line breaks).
+
+#### Title ####
+
+This variable supersedes the section_info.json value for the title of the
+section. This way you can specify a custom title per page.
+
+#### link_title ####
+
+When provided this page will show up in the navigation with the given title
+value. If no link_label value is provided it will also be used for the label
+of the link.
+
+#### link_label ####
+
+When provided this page will show up in the navigation with the given label
+value.
+
+#### sort_order ####
+
+When included in the navigation the sorting order of this item is determined
+by this value. It can be any string you would like, numbers sort before any
+other characters, so a numeric value would be ideal.
+
+## Directory Structure ##
+
+Directories are only parsed for mkd files if a section_info.json file is
+present. This file indicates that the contents of the directory are meant to
+be part of the site. If there is no section_info.json file then the .mkd files
+found in the directory will be ignored and an invalid section error will be
+shown when trying to access those files.
+
+### section_info.json ###
+
+This is the configuration file of the directory. This is required in each
+directory that is part of the site. The values in each section_info.json file
+are stacked on top of the parent directories values. You can override the
+values in a specific directory, otherwise any value set in any parent directory
+will be included in the child directories. This is a JSON formatted file and
+the following attributes are allowed:
+
+#### header ####
+
+A customized header file to be used when rendering the pages in this and any
+child sections. Defaults to the value of 'header.php'. All include files are
+searched for in the 'includes' directory.
+
+#### footer ####
+
+A customized footer file to be used when rendering the pages in this and any
+child sections. Defaults to the value of 'footer.php'. All include files are
+searched for in the 'includes' directory.
+
+#### type ####
+
+The type of directory this is. A value of 'hidden' will indicate the directory
+is hidden from the navigation, but the files can still be rendered as pages
+(see the status_pages directory for an example).
+
+#### site_name ####
+
+The name of the site. This can be used when rendering the title tag of the
+site.
+
+#### section_name ####
+
+The specific section name for this section. Also used in rendering the title
+tag for the page. Also use in rendering the navigation. This is the label
+value used for the section in any navigation.
+
+#### section_title ####
+
+A title value for the section. Used in rendering the navigation. This is the
+title tag applied to the navigation entry.
+
+## Static Files ##
+
+Any static file can be served from within the Git-Blog directory with the
+exception of mkd and json files. This is to prevent any raw data being exposed
+publicly. If you link directly to any file within the directory structure,
+whether it is in the navigation or not it can be shown.

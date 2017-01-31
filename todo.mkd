@@ -1,0 +1,31 @@
+# TODO #
+
+The following is a list of features that remain to be completed.
+
+ - Link handling
+   - Allowing parsing of documents for links (extrnal and internal).
+	- Link validation checks. When a document is parsed, if an invalid link is
+	  found notify the admin of a broken link.
+ - Navigation
+	 - Saving Navigation to a chache file.
+	 - ~~Handling navigation menus.~~
+	 - ~~Default navigation rendering.~~
+ - ~~Access restrictions~~
+    - ~~Prevent access to raw mkd files~~.
+    - ~~Allow access to specific referenced content (images, css, documents, etc).~~
+ - Git structure
+    - Release version of code.
+    - Personal use version (branch).
+    - Post pull hooks (clear cache, etc).
+ - ~~Documentation~~
+    - ~~Create documentation for application~~
+    - ~~Documentation is default release branch.~~
+    - ~~Include license (GPL 3.0) and refernece to Parsedown.~~
+ - Tests
+    - Create set of tests for validating all of the PHP code (PHPUnit).
+ - ~~Page rendering~~
+    - ~~Handle customized titles for each page. &lt;!--TITLE: My custom Title -->~~
+    - Allow titles to be more dynamic (static site name, custom title section)
+ - Customizable UI components
+ 	- Can handle added CSS entires per section
+	- Can handled added JavaScript per section

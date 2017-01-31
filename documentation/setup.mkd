@@ -1,0 +1,33 @@
+<!--TITLE: Setup-->
+<!--link_title: Setup-->
+<!--sort_order: 30-->
+
+# Git-Blog Setup #
+
+Once you have your copy of Git-Blog setting it up is a matter of just making
+the path where Git-Blog is located accessible by your webserver. This can be
+any location in your webserver path, Git-Blog should automatically adjust the
+URL paths based on the path it is being served from.
+
+Your webserver must support .htaccess files and allow overriding of Rewrite
+rules. This means that you should enable the FileInfo override for the
+directory where Git-Blog will be located, or any parent directory:
+
+<pre class="code">
+&lt;directory /Path/To/Git-Blog/&gt;
+	AllowOverride FileInfo
+&lt;/directory&gt;
+</pre>
+
+The last step is to branch the code so you can make your edits away from the
+main branch of the code.
+
+<pre class="code">
+git branch MyWebSite
+</pre>
+
+You can then make any changes you wish to the site without affecting the
+upstream branch. Future updates to the workings of Git-Blog can be included by
+pulling in the changes from the main branch into your website branch. Your
+first few steps would likely be to remove this Git-Blog documentation and
+other related files from your branch. 

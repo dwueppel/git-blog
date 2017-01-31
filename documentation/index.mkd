@@ -1,3 +1,16 @@
-# Git-Blog Documentation #
+<!--TITLE: Overview-->
+<!--link_title: Overview-->
+<!--sort_order: 1-->
+# Git-Blog Documentation Overview #
 
-The documentation for how to use Git-Blog
+Git-Blog is a lightweight content management system. It has been designed to
+be completely file and directory driven with no need of a database. Content 
+can be generated using your favorite text editor using Markdown. The structure
+and navigation of the site is also encapsulated in the directory structure of
+the site. In addition changes can all be managed using Git.
+
+ * [Overview](index.html)
+ * [Installation](installation.html)
+ * [Setup](setup.html)
+ * [Usage](usage.html)
+ * [License](license.html)

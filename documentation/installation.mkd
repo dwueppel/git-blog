@@ -1,0 +1,32 @@
+<!--TITLE: Installation-->
+<!--link_title: Installation-->
+<!--sort_order: 10-->
+# Git-Blog Installation #
+
+There are three main steps to installation Git-Blog.
+
+## Obtain a Copy of Git-Blog ##
+
+The easiest option to obtain Git-Blog is to clone the existing repository.
+
+<pre class="code">
+git clone http://github.com/dwueppel/git-blog.git
+</pre>
+
+You can also get a copy via a direct download, however you will have to
+manually setup the git repo within the directory obtained.
+
+## Branch the Repo ##
+
+Once you have your local copy of Git-Blog, you can branch the main repo to
+create your own website. This way you can pull any updates to the mainline
+source code and include them into your own repo as they are released.
+
+<pre class="code">
+git branch MyNewWebsite
+</pre>
+
+## Begin Editing Pages ##
+
+With your new branch you are free to edit the existing markdown files and
+adjust the directory structure of the site.
