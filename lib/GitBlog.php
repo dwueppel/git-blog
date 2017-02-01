@@ -87,7 +87,7 @@ class GitBlog {
 		# path to the given path.
 		$basePath = $this->basePath();
 
-		if (strpos($path, '/') != 0) {
+		if (strpos($path, '/') !== 0) {
 			$basePath .= "/";
 		}
 
@@ -151,7 +151,7 @@ class GBSection {
 		# local directory and contains no loops.
 		$localPath = realpath('.');
 		$sectionPath = realpath($sectionDir);
-		if (strpos($sectionPath, $localPath) != 0) {
+		if (strpos($sectionPath, $localPath) !== 0) {
 			# The path does not fall under this directory skip it.
 			throw new Exception("Section given is not valid");
 		}
@@ -312,7 +312,7 @@ class GBNavigation {
 		if (array_key_exists('path', $args)) {
 			$this->path = $args['path'];
 			# No leading slashes allowed.
-			if (strpos($this->path, '/') == 0) {
+			if (strpos($this->path, '/') === 0) {
 				$this->path = str_replace('/', '', $this->path);
 			}
 
@@ -391,7 +391,7 @@ class GBNavigation {
 		if ($path) {
 			# Find the first part and then ask for the rest from that item.
 			foreach ($this->subNav as $navEntry) {
-				if (strpos($navEntry->path, $path) == 0) {
+				if (strpos($navEntry->path, $path) === 0) {
 					return $navEntry->getNavForPath($path);
 				}
 			}
