@@ -1,0 +1,7 @@
+<!--link_label: ChangeLog-->
+<!--sort_order: 10 -->
+# Git-Blog ChangeLog #
+
+##2017-02-01 - Version 0.1.0 ##
+
+The initial release of the software. This includes all basic functionality.

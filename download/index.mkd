@@ -1,0 +1,19 @@
+<!--link_label: Download -->
+<!--sort_order: 1-->
+# Downloading Git-Blog #
+
+There are two ways to obtain a copy of Git-Blog. The recommended way is to
+clone the existing GitHub repo and branch a copy for you to work on locally.
+However, it is also possible to obtain a copy by getting a tar archive of the
+most recent stable branch and initialize your own git repo within the
+unarchvied directory.
+
+## GitHub ##
+
+To obtain from GitHub you can just clone the repository found at
+<http:://github.com/dwueppel/git-blog/>.
+
+## Archive ##
+
+You can also download [the most recent archive](git-blog-latest.tar.gz). Or
+view the [archives](archives/) section for a list of previous versions.
